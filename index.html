@@ -19,6 +19,10 @@
          font-family: 'Noto Sans KR', sans-serif;
        }
 
+       #wrap{
+        width: 100%;
+       }
+
         
         a{
             text-decoration: none;
@@ -31,18 +35,18 @@
             list-style: none;
         }
 
-        .header{
+        header{
             width: 100%;
             height: 55px;
             position: relative;
             display: flex;
             background: white;
-            position: sticky;
+            position: fixed;
             z-index: 1;
             top: 0;
         }
 
-        .header > img{
+        header > img{
             width: 300px;
             height: auto;
             position: absolute;
@@ -106,6 +110,7 @@
         .swiper_main_slideshow{
             width: 100%;
             height: 300px;
+            margin-top: 60px;
         }
        
        .swiper_main_slideshow > img {
@@ -506,7 +511,7 @@
             width: 100%;
         }
 
-        .header{
+        header{
             width: 100%;
         }
 
@@ -514,7 +519,7 @@
             display: none;
         }
 
-        .header > img{
+        header > img{
             margin-left: -300px;
             margin-top: 25px;
             width: 200px;
@@ -658,6 +663,10 @@
             margin-right: -200px;
             position: fixed;
         }
+
+        #shop_menus02{
+            z-index: 6;
+        }
        }
 
        @media screen and (max-width: 480px){
@@ -669,11 +678,11 @@
             width: 480px;
         }
 
-        .header{
+        header{
             width: 480px;
         }
 
-        .header > img{
+        header > img{
             margin-left: -41%;
         }
 
@@ -799,6 +808,10 @@
             width: 100%;
         }
 
+        .event_inr{
+            margin-left: 10px;
+        }
+
         .serch_box{
             width: 400px;
         }
@@ -815,6 +828,8 @@
         .search_cnt{
             margin-left: 15px;
         }
+
+    
     }
 
 
@@ -991,7 +1006,8 @@
     </script>
 </head>
 <body>
-    <div class="header">
+    <div id="wrap">
+    <header>
         <span class="bc_header_sh"><a href="#">SHOP</a></span>
         <img src="images2/blackup_loogoo.png" alt="">
         <ul class="bc_header_ul">
@@ -1004,7 +1020,6 @@
             <li><i class="fa-solid fa-cart-shopping"></i></li>
             <li><i onclick="openNav()" class="fa-solid fa-bars"></i></li>
         </ul>
-    </div>
     <div class="serch_box">
         <div class="sh_close"><i class="fa-solid fa-x"></i></div>
         <input type="text"><i class="fa-solid fa-magnifying-glass"></i>
@@ -1112,15 +1127,17 @@
         <div class="tab_menu_box"><span class="pants"><a href="#swiper_pants_item_slideshow01">PANTS</a></span></div>
         <div class="tab_menu_box"><span class="sk"><a href="#swiper_sk_item_slideshow01">SK&OPS</a></span></div>
     </div>
-    <div class="main_slide_box">
+</header>
+    <main>
+    <section class="main_slide_box">
             <div class="swiper_main_slideshow">
                 <img src="images2/blackup_main4.jpg" alt="검은 배경에 여성모델 두명이 있는 화보 메인 슬라이드 이미지">
                 <img src="images2/black_main_01.jpg" alt="옅은 그린 배경에 여성모델 두명이 있는 화보 메인 두번째 슬라이드 이미지">
             </div>
-        </div>
+        </section>
     <div class="scroll_top"><i class="fa-solid fa-chevron-up"></i>
     </div>
-    <div class="swiper_slide_Sec">
+    <section class="swiper_slide_Sec">
         <div class="swiper_slide_box">
         <img src="images2/blackup_swiper_slide_01.jpg" alt="오프숄더 입고있는 여성모델 이미지">
         <p class="slide_box_txt_top">
@@ -1148,9 +1165,9 @@
             자켓 몰아보기
         </P>
     </div>
-    </div>
+    </section>
     <div id="swiper_hot_item_slideshow01"></div>
-       <div id="swiper_hot_item_slideshow">
+       <section id="swiper_hot_item_slideshow">
          <h3>최근 인기있는 상품</h3>
             <ul class="swiper_hot_item_ul">
                 <li><img src="images2/blackup_hot_item01.gif" alt="한쪽 숄더가 파여있는 여성모델(베이지,블랙) gif"></li>
@@ -1172,13 +1189,13 @@
                 <li><img src="images2/blackup_hot_item05.gif" alt="청와이드 팬츠(청,흑청) gif"></li>
                 <li><img src="images2/blackup_hot_item06.gif" alt="기본 이너티(네이비,블랙,아이보리)gif"></li>
             </ul>
-    </div>
-    <div class="arrowbox">
+    </section>
+    <section class="arrowbox">
         <div class="prevbtn"><i class="fa-solid fa-chevron-left"></i></div>
         <div class="nextbtn"><i class="fa-solid fa-chevron-right"></i></div>
-    </div>
+    </section>
     <div id="swiper_outer_item_slideshow01"></div>
-    <div id="swiper_outer_item_slideshow">
+    <section id="swiper_outer_item_slideshow">
         <h3>OUTER</h3>
         <ul class="swiper_outer_item_ul">
             <li><img src="images2/blackup_outer01.webp" alt="후드집업 입고있는 여성모델(그레이,블랙)gif"></li>
@@ -1198,13 +1215,13 @@
             <li><img src="images2/blackup_outer03.webp" alt="가죽자켓 입고있는 여성모델(브라운,블랙)gif"></li>
             <li><img src="images2/blackup_outer04.webp" alt="숏패딩을 입고있는 여성모델(블랙)gif"></li>
         </ul>
-    </div>
-    <div class="arrowbox">
+    </section>
+    <section class="arrowbox">
         <div class="outer_prevbtn"><i class="fa-solid fa-chevron-left"></i></div>
         <div class="outer_nextbtn"><i class="fa-solid fa-chevron-right"></i></div>
-    </div>
+    </section>
     <div id="basic_sec01"></div>
-    <div id="basic_sec">
+    <section id="basic_sec">
         <img src="images2/blackup_basic.jpg" alt="베이직-브라탑을 입고있는 여성모델 이미지">
         <div class="basic_txt">
             <h1>B-BASIC</h1>
@@ -1215,9 +1232,9 @@
             </p>
             <a href="포트폴리오_블랙업_서브 .html"><div class="basic_btn">비베이직 보러가기</div></a>
         </div>
-    </div>
+    </section>
     <div id="swiper_top_item_slideshow01"></div>
-    <div id="swiper_top_item_slideshow">
+    <section id="swiper_top_item_slideshow">
         <h3>TOP</h3>
         <ul class="swiper_top_item_ul">
             <li><img src="images2/blackup_top.webp" alt="기본 니트 입고있는 여성모델(레드,아이보리)gif"></li>
@@ -1246,17 +1263,16 @@
             <li><img src="images2/blackup_top04.webp" alt="크롭 브이넥(블랙,그레이)gif"></li>
             
         </ul>
-    </div>
-    <div class="arrowbox">
+    </section>
+    <section class="arrowbox">
             <div class="top_prevbtn"><i class="fa-solid fa-chevron-left"></i></div>
             <div class="top_nextbtn"><i class="fa-solid fa-chevron-right"></i></div>
-        </div>
-            <div class="swiper_banner_slideshow">
+        </section>
+            <section class="swiper_banner_slideshow">
                 <img src="images2/blackup_banner01.jpg" alt="오늘도착 홍보 이미지 배너">
-            </div>
-    </div>
+            </section>
     <div id="swiper_pants_item_slideshow01"></div>
-    <div id="swiper_pants_item_slideshow">
+    <section id="swiper_pants_item_slideshow">
         <h3>PANTS</h3>
         <ul class="swiper_pants_item_ul">
             <li><img src="images2/blackup_pants01.gif" alt="워싱와이드 팬츠 입고있는 여성모델(연한청)gif"></li>
@@ -1281,13 +1297,13 @@
             <li><img src="images2/blackup_pants04.gif" alt="얇은 부츠컷 슬랙스(블랙)gif"></li>    
         </ul>
         
-    </div>
-    <div class="arrowbox">
+    </section>
+    <section class="arrowbox">
             <div class="pants_prevbtn"><i class="fa-solid fa-chevron-left"></i></div>
             <div class="pants_nextbtn"><i class="fa-solid fa-chevron-right"></i></div>
-        </div>
+        </section>
     <div id="swiper_sk_item_slideshow01"></div>
-    <div id="swiper_sk_item_slideshow">
+    <section id="swiper_sk_item_slideshow">
         <h3>SK&OPS</h3>
         <ul class="swiper_sk_item_ul">
             <li><img src="images2/blackup_sk01.webp" alt="얇은면 오프숄더 롱원피스(카키)gif"></li>
@@ -1312,12 +1328,12 @@
             <li><img src="images2/blackup_sk04.webp" alt="워싱이 들어간 청롱스커트(흑청)gif"></li>
         </ul>
         
-    </div>
-    <div class="arrowbox">
+    </section>
+    <section class="arrowbox">
             <div class="sk_prevbtn"><i class="fa-solid fa-chevron-left"></i></div>
             <div class="sk_nextbtn"><i class="fa-solid fa-chevron-right"></i></div>
-        </div>
-    <div class="swiper_banner02_section">
+        </section>
+    <section class="swiper_banner02_section">
         <div class="swiper_banner02_inner">
             <div class="swiper_banner02_slideshow">
                 <img src="images2/blackup_banner03.jpg" alt="마폴리 덤블 스웨이트 점퍼 할인 이미지">
@@ -1326,8 +1342,8 @@
                 <img src="images2/blackup_banner06.jpg" alt="스테뷰 덤블 후드 야상점퍼 할인 이미지">
             </div>
         </div>
-    </div>
-    <div id="bc_banner_content">
+    </section>
+    <section id="bc_banner_content">
         <div class="inr_banner_content_box">
         <img src="images2/blackup_banner_img1.jpg" alt="브라운 무스탕 이미지">
         <div class="bannr_con_txt">
@@ -1349,8 +1365,9 @@
             <P>따분한 겨울룩에 활기를</P>
         </div>
     </div>
-    </div>
-    <div id="eventindex">
+    </section>
+</main>
+    <footer id="eventindex">
         <div class="event_inr">
         <p class="eventindex_title">APP DOWNLOAD</p>
         <P>블랙업 어플리케이션 다운로드시,</p>
@@ -1371,6 +1388,7 @@
         </div>
     </div>
 </div>
+</footer>
 </div>
 
 
