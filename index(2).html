@@ -27,7 +27,7 @@
             color: black;
         }
 
-        .header{
+        header{
             width: 100%;
             position: relative;
             height: 55px;
@@ -194,7 +194,7 @@
 
        #black_sub_main{
         height: auto;
-        margin-top: 70px;
+        margin-top: 20px;
         position: relative;
        }
 
@@ -290,7 +290,7 @@
             margin-left: 5px;
         }
 
-        .header{
+        header{
             width: 100%;
         }
 
@@ -302,7 +302,7 @@
             display: none;
         }
 
-        .header > a > img{
+        .loogoo{
             margin-left: -240px;
             margin-top: 25px;
             width: 200px;
@@ -370,7 +370,7 @@
             width: 100%;
         }
 
-        .header > a > img{
+       .loogoo{
            width: 170px;
            margin-left: -150px;
            margin-top: 40px;
@@ -391,14 +391,18 @@
         }
 
         .review_text1,.review_text2{
-            margin-left: -78px;
+            margin-left: -82px;
             
         }
 
         .review_text1{
             font-size: 1.2em;
-            margin-left: -45px;
+            margin-left: -50px;
             margin-top: 20px;
+        }
+
+        .b-basic_inr > img{
+            margin-left: 0px;
         }
 
         .menuCategory{
@@ -472,9 +476,10 @@
     </script>
 </head>
 <body>
-        <div class="header">
+    <div id="wrap">
+        <header>
             <span class="bc_header_sh"><a href="#">SHOP</a></span>
-            <a href="포트폴리오_블랙업_메인 .html"><img class="loogoo" src="images2/blackup_loogoo.png" alt=""></a>
+            <a href="포트폴리오_블랙업_메인 .html"><img class="loogoo" src="images2/blackup_loogoo.png" alt="블랙업 로고 png"></a>
             <ul class="bc_header_ul">
                 <li class="bc_header_search"><a href="#">SEARCH</a></li>
                 <li><a href="#">ACCOUNT</a></li>
@@ -485,7 +490,8 @@
                 <li><i class="fa-solid fa-cart-shopping"></i></li>
                 <li><i onclick="openNav()" class="fa-solid fa-bars"></i></li>
             </ul>
-        </div>
+        </header>
+        <main>
         <div class="serch_box">
             <div class="sh_close"><i class="fa-solid fa-x"></i></div>
             <input type="text"><i class="fa-solid fa-magnifying-glass"></i>
@@ -608,7 +614,8 @@
             <li><img src="images3/blackup_sub_basic11.webp" alt="긴팔티(화이트,그레이)gif"></li>
             <li><img src="images3/blackup_sub_basic12.webp" alt="라운드 브이넥 긴팔티(화이트,그레이)gif"></li>
         </ul>
-        <div class="b-basic_review">
+    </main>
+        <footer class="b-basic_review">
             <div class="review_text1">B-BASIC 시리즈 리뷰</div>
             <div class="review_text2">누적 리뷰 31,302건 ㅣ 자사몰 평균  ★ 4.9</div>
             <div class="b-basic_inr">
@@ -627,7 +634,8 @@
                 <img src="images3/blackup_sub_review.webp" alt="리뷰 이미지">
                 <img src="images3/blackup_sub_review.webp" alt="리뷰 이미지">
             </div>
-        </div>
+        </footer>
+    </div>
 
     <script>
         function openNav() {
