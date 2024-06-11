@@ -20,9 +20,9 @@
        }
 
        #wrap{
-        width: 100%;
+        min-width: 370px;
+        margin: 0;
        }
-
         
         a{
             text-decoration: none;
@@ -37,7 +37,7 @@
 
         header{
             width: 100%;
-            height: 55px;
+            height: 50px;
             position: relative;
             display: flex;
             background: white;
@@ -70,17 +70,19 @@
 
         }
 
-        .bc_header_ul > li, .bc_header_icon > li{
+        .bc_header_ul > li{
             margin-left: 10px;
         }
 
         .bc_header_icon{
             position: absolute;
-            right: 0%;
-            top: 25%;
+            width: 60px;
+            justify-content: space-between;
             display: flex;
             opacity: 0;
             cursor: pointer;
+            right: 0%;
+            top: 25%;
         }
 
         .tab_menu_swiper{
@@ -89,15 +91,21 @@
             height: 70px;
             position: fixed;
             z-index: 1;
+            top: 45px;
+
+        }
+
+        .tab_menu_inr{
+            width: 70%;
             display: flex;
             justify-content: space-between;
             scroll-behavior: smooth;
             box-sizing: content-box;
-            top: 55px;
+            margin: 0 auto;
         }
 
         .tab_menu_box{
-            width: 220px;
+            width: 200px;
             height: 70px;
             text-align: center;
             line-height: 70px;
@@ -105,14 +113,11 @@
 
         .main_slide_box > .bx-wrapper{
             height: auto;
+            width: 100%;
+            margin-top: 70px;
         }
 
-        .swiper_main_slideshow{
-            width: 100%;
-            height: 300px;
-            margin-top: 60px;
-        }
-       
+ 
        .swiper_main_slideshow > img {
         cursor: pointer;
     
@@ -124,38 +129,30 @@
    
 
        .swiper_banner_slideshow {
-        position: relative;
         height: 120px;
+        width: 100%;
         cursor: pointer;
-        overflow: hidden;
         margin-top: 180px;
        }
 
        .swiper_banner_slideshow > img {
-        position: absolute;
         width: 100%;
-        height: 120px;
         object-fit: cover;
-        cursor: pointer;
        }
 
        .swiper_banner02_inner > .bx-wrapper{
         margin: 0 auto;
         margin-top: 180px;
+        height: auto;
        }
 
       .swiper_banner02_slideshow {
-        height: 530px;
-        position: relative;
         cursor: pointer;
-        overflow: hidden;
-    
        }
 
        .swiper_banner02_slideshow > img {
         position: absolute;
         width: 100%;
-        height: 530px;
         cursor: pointer;
        }
 
@@ -169,9 +166,7 @@
         width: 1480px;
         display: flex;
         justify-content: space-between;
-        margin: 0 auto;
         margin-top: 180px;
-        margin-left: 22px;
        }
 
        .swiper_slide_box > img{
@@ -294,7 +289,7 @@
        }
 
        h1{
-        font-size: 2.5em;
+        font-size: 2.5rem;
         letter-spacing: 3px;
        }
 
@@ -361,6 +356,7 @@
        .eventindex_txt{
         margin: 0 auto;
         margin-top: -15px;
+        width: 20rem;
        }
 
        .ios_img > img{
@@ -375,7 +371,7 @@
 
 
        .eventindex_inr02{
-        width: 350px;
+        width: 80%;
         margin: 0 auto;
         display: flex;
         justify-content: space-between;
@@ -449,7 +445,7 @@
         font-size: 0.9em;
        }
 
-       .serch_box{
+       .search_box{
         position: absolute;
         z-index: 999;
         width: 500px;
@@ -461,7 +457,7 @@
         display: none;
        }
 
-       .serch_box > input{
+       .search_box > input{
         width: 400px;
         border: none;
         border-bottom: 1px solid black;
@@ -470,11 +466,11 @@
         outline: none;
        }
 
-       .serch_box > i{
+       .search_box > i{
         margin-left: -20px;
        }
 
-       .serch_box > p{
+       .search_box > p{
         font-size: 0.9em;
         margin-left: 50px;
         font-weight: 300;
@@ -502,333 +498,188 @@
 
 
        
-
-       @media screen and (max-width: 768px){
-        body{
-            overflow-x: hidden;
-        }
-        #wrap{
+       /* 반응형 */
+       @media screen and (max-width: 1280px){
+        #wrap,.bx-wrapper,.swiper_banner_slideshow,.swiper_banner_slideshow > img
+        ,.swiper_slide_Sec,.swiper_slide_box > img, #basic_sec, .inr_banner_content_box,.inr_banner_content_box > img
+        ,.tab_menu_swiper
+        {
             width: 100%;
         }
 
-        header{
-            width: 100%;
+        .bc_header_icon{
+            opacity: 1;
+            right: 32px;
+        }
+
+        header > img{
+            width: 250px;
+            left: 0;
         }
 
         .bc_header_ul,.bc_header_sh{
             display: none;
         }
 
-        header > img{
-            margin-left: -300px;
-            margin-top: 25px;
-            width: 200px;
-        }
-
-        .tab_menu_swiper{
-            width: 100%;
-            margin-left: -8px;
-        }
-
-        .tab_menu_swiper > .tab_menu_box > a{
-            font-size: 0.9em;
-        }
-
-        .swiper_main_slideshow,.swiper_main_slideshow > img{
-            height: 480px;
-            top: 20px;
-        } 
-
-
-        .swiper_slide_Sec{
-            width: 100%;
-            flex-wrap: wrap;
-        }
-
-        .swiper_slide_Sec > .swiper_slide_box > img{
-            width: 400px;
-            margin-left: 130px;
-        }
-
-        .swiper_slide_box > img{
-            width: 330px;
-            margin-left: 20px;
-        }
-
-        .slide_box_txt_bottom,.slide_box_txt_top{
-            margin-left: 270px;
+        .swiper_slide_box{
+            width: 380px;
+            height: auto;
         }
 
         .slide_box_txt_top,.slide_box_txt_bottom{
-            font-size: 1em;
+            margin: 0 auto;
         }
 
-        .hot_nextbtn,.hot_prevbtn{
-            display: block;
-            position: absolute;
+        #basic_sec{
+            flex-shrink: 1;
         }
 
-        .hot_prevbtn{
-            left: 2px;
+        
+        .swiper_banner02_inner > .bx-wrapper{
+            height: auto;
         }
 
-        .hot_nextbtn{
-            right: 2px;
+        #bc_banner_content{
+            flex-direction: column;
         }
 
-        .swiper_hot_item_ul,.swiper_outer_item_ul
-        ,.swiper_top_item_ul,.swiper_pants_item_ul
-        ,.swiper_sk_item_ul{
-            width: 100%;
+        .search_box{
+            right: 50px;
+        }
+       }
+
+       /* 테블릿 가로, 테블릿 세로 (해상도 768px ~ 1023px)*/
+       @media screen and (max-width: 968px){
+    
+        .basic_txt{
+            margin-left: 2px;
         }
 
-        .swiper_hot_item_ul > li > img ,.swiper_outer_item_ul > li > img
-        ,.swiper_top_item_ul > li > img ,.swiper_pants_item_ul > li > img
-        ,.swiper_sk_item_ul > li > img{
-            width: 330px;
+        #basic_sec > img{
+            width: 480px;
+            height: auto;
+        }
+
+        .basic_btn{
+            width: 140px;
+            margin: 0 auto;
+            
+        }
+
+        .swiper_hot_item_ul > li > img, .swiper_outer_item_ul > li > img
+        , .swiper_top_item_ul > li > img, .swiper_pants_item_ul > li > img
+        , .swiper_sk_item_ul > li > img{
+            flex: 1 1 40%;
         }
 
         .arrowbox{
             width: 100%;
         }
 
-        .nextbtn,.outer_nextbtn
-        ,.top_nextbtn, .top_nextbtn,.pants_nextbtn ,.sk_nextbtn{
-            right: 12px;
+        
+       }
+
+       /* 모바일 가로, 모바일 세로 (해상도 480px ~ 767px)*/
+       @media screen and (max-width: 768px){
+        .bc_header_icon{
+            right: 32px;
+            margin-top: 5px;
         }
-     
-        .outer_prevbtn , .prevbtn
-        ,.top_prevbtn,.pants_prevbtn
-        ,.sk_prevbtn{
-            left: 8px;
+
+        header > img{
+            width: 180px;
+            margin-top: 20px;
         }
 
         .bc_header_icon{
             opacity: 1;
-            margin-right: 25px;
+            top: 1px;
         }
 
-        #basic_sec {
-           flex-direction: column;
-           height: auto;
-
-        }
-
-        #basic_sec,#basic_sec > img {
-           width: 100%;
-        }
-
-        .basic_txt{
-            margin-left: 21%;
-        }
-
-        .swiper_banner_slideshow,.swiper_banner_slideshow > img{
-            width: 100%;
-            height: 70px;
-
-        }
-
-        .swiper_banner02_slideshow, .swiper_banner02_slideshow > img{
-            width: 100%;
-            height: 310px;
-            margin-left: 6px;
-        }
-
-        .swiper_banner02_slideshow > img{
-            margin-left: -3px;
-        }
-
-        #bc_banner_content{
-            flex-direction: column;
-            width: 100%;
-        }
-
-        .inr_banner_content_box > img{
-            width: 100%;
-        }
-
-        .slide_box_txt_top > p , .slide_box_txt_bottom > p{
-            font-size: 1.8em;
-        }
-
-        #eventindex{
-            width: 100%;
-        }
-
-        .scroll_top{
-            right: 0;
-        }
-
-        .serch_box{
-            margin-right: -200px;
-            position: fixed;
-        }
-
-        #shop_menus02{
-            z-index: 6;
-        }
-       }
-
-       @media screen and (max-width: 480px){
-        body{
-            overflow-x: hidden;
-        }
-        
-        #wrap{
-            width: 480px;
-        }
-
-        header{
-            width: 480px;
-        }
-
-        header > img{
-            margin-left: -41%;
-        }
-
-        .bc_header_icon{
-            margin-right: 60px;
-        }
-
-        .swiper_main_slideshow,.swiper_main_slideshow > img{
-            height: 320px;
-        }
-
-        .hot > a, .outer > a, .basic > a, .top > a
-        ,.pants > a, .sk > a{
-            font-size: 0.8em;
-        }
-
-        .tab_menu_box > .hot > a.on, .tab_menu_box > .outer > a.on
-       , .tab_menu_box > .basic > a.on,.tab_menu_box > .top > a.on
-       ,.tab_menu_box > .pants > a.on,.tab_menu_box > .sk > a.on{
-        font-size: 0.9em;
-       }
-
-        .swiper_hot_item_ul,.swiper_outer_item_ul
-        ,.swiper_top_item_ul,.swiper_pants_item_ul
-        ,.swiper_sk_item_ul{
-            width: 100%;
-        }
-
-        .swiper_hot_item_ul > li > img ,.swiper_outer_item_ul > li > img
-        ,.swiper_top_item_ul > li > img ,.swiper_pants_item_ul > li > img
-        ,.swiper_sk_item_ul > li > img{
-            width: 230px;
+        .tab_menu_box{
+            width: 50px;
+            font-size: 0.5em;
+            margin-left: -5px;
         }
 
         .swiper_slide_Sec{
-            width: 100%;
-            flex-wrap: wrap;
+            margin-top: 80px;
         }
 
-        .swiper_slide_Sec > .swiper_slide_box > img{
-            width: 300px;
-            margin-left: 0px;
+        .swiper_slide_box{
+            width: 40%;
         }
 
         .swiper_slide_box > img{
-            width: 330px;
-            margin-left: 20px;
-        }
-
-        .slide_box_txt_bottom,.slide_box_txt_top{
-            margin-left: 0px;
-        }
-
-        .swiper_slide_box > img{
-            width: 230px;
-            margin-left: 20px;
-        }
-
-        .slide_box_txt_top,.slide_box_txt_bottom{
-            font-size: 1em;
-        }
-
-        #arrowbox{
-            width: 100%;
-        }
-
-        .hot_nextbtn,.hot_prevbtn{
-            display: block;
-        }
-
-        .hot_prevbtn{
-            margin-left: 4px;
-        }
-
-        .hot_nextbtn{
-            margin-left: 400px;
-        }
-
-        .nextbtn,.outer_nextbtn
-        ,.top_nextbtn,.pants_nextbtn
-        ,.sk_nextbtn{
-            position: absolute;
-            right: 6px;
-        }
-        
-        .outer_prevbtn , .prevbtn
-        ,.top_prevbtn,.pants_prevbtn
-        ,.sk_prevbtn{
-            margin-left: 8px;
-        }
-
-        #basic_sec > img {
-           width: 480px;
-        }
-
-        .basic_txt{
-            margin-left: 1%;   
-       }
- 
-       .swiper_banner_slideshow,.swiper_banner_slideshow > img{
             width: 100%;
             height: auto;
         }
 
-       .swiper_banner02_slideshow, .swiper_banner02_slideshow > img{
-            width: 100%;
-            height: 200px;
+        .swiper_slide_box > p{
+            font-size: 0.7em;
         }
 
-        .swiper_banner02_slideshow > img{
-            margin-left: -3px;
+        .swiper_banner02_inner > .bx-wrapper {
+            height: auto;
         }
 
-        .inr_banner_content_box > img{
-            width: 100%;
+        .swiper_hot_item_ul > img{
+            width: 300px;
+            height: auto;
         }
 
-        .slide_box_txt_top > p , .slide_box_txt_bottom > p{
-            font-size: 1.8em;
+        #basic_sec{
+            flex-direction: column;
         }
 
-        #eventindex{
-            width: 100%;
+        #basic_sec > img{
+            width: 350px;
+            height: auto;
+            margin: 0 auto;
         }
 
-        .event_inr{
-            margin-left: 10px;
+        .basic_txt{
+            margin: 0 auto;
+            width: 300px;
         }
 
-        .serch_box{
-            width: 400px;
+        .basic_btn{
+            width: 90px;
+            font-size: 0.7em;
         }
 
-        .serch_box > input{
-            margin-left: 10px;
-            width: 370px;
+        .swiper_hot_item_ul > li > img, .swiper_outer_item_ul > li > img
+        , .swiper_top_item_ul > li > img, .swiper_pants_item_ul > li > img
+        , .swiper_sk_item_ul > li > img{
+            width: 200px;
         }
 
-        .serch_box > p{
-            margin-left: 12px;
+        .eventindex_inr02{
+            width: 70%;
+            margin-left: 60px;
+        }
+
+        .search_box,.search_box > input{
+            width: 80%;
+        }
+
+        .search_box > input{
+            margin-left: 30px;
+        }
+
+        .search_box > p{
+            margin-left: 17px;
         }
 
         .search_cnt{
-            margin-left: 15px;
+            width: 90%;
+            margin-left: 18px;
         }
 
+        .search_cnt > li{
+            font-size: 0.9em;
+        }
+        
     
     }
 
@@ -971,13 +822,13 @@
 
         $(function(){
             $(".bc_header_search").click(function(){
-                $(".serch_box").show()
+                $(".search_box").show()
             });
         });
 
         $(function(){
             $(".sh_close").click(function(){
-                $(".serch_box").hide()
+                $(".search_box").hide()
             });
         });
 
@@ -1007,7 +858,7 @@
 </head>
 <body>
     <div id="wrap">
-    <header>
+    <header class="max-container">
         <span class="bc_header_sh"><a href="#">SHOP</a></span>
         <img src="images2/blackup_loogoo.png" alt="">
         <ul class="bc_header_ul">
@@ -1020,7 +871,7 @@
             <li><i class="fa-solid fa-cart-shopping"></i></li>
             <li><i onclick="openNav()" class="fa-solid fa-bars"></i></li>
         </ul>
-    <div class="serch_box">
+    <div class="search_box">
         <div class="sh_close"><i class="fa-solid fa-x"></i></div>
         <input type="text"><i class="fa-solid fa-magnifying-glass"></i>
         <p>인기검색어</p>
@@ -1120,12 +971,14 @@
         <div class="insta"><i class="fa-brands fa-instagram"></i></div>
     </div>
     <div class="tab_menu_swiper">
+        <div class="tab_menu_inr">
         <div class="tab_menu_box"><span class="hot"><a href="#swiper_hot_item_slideshow01">인기아이템</a></span></div>
         <div class="tab_menu_box"><span class="outer"><a href="#swiper_outer_item_slideshow01">OUTER</a></span></div>
         <div class="tab_menu_box"><span class="basic"><a href="#basic_sec01">BASIC</a></span></div>
         <div class="tab_menu_box"><span class="top"><a href="#swiper_top_item_slideshow01">TOP</a></span></div>
         <div class="tab_menu_box"><span class="pants"><a href="#swiper_pants_item_slideshow01">PANTS</a></span></div>
         <div class="tab_menu_box"><span class="sk"><a href="#swiper_sk_item_slideshow01">SK&OPS</a></span></div>
+    </div>
     </div>
 </header>
     <main>
