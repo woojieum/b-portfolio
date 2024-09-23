@@ -92,7 +92,7 @@
             position: fixed;
             z-index: 1;
             top: 45px;
-
+            display: none;
         }
 
         .tab_menu_inr{
@@ -106,27 +106,39 @@
 
         .tab_menu_box{
             width: 200px;
-            height: 70px;
+            height: 60px;
             text-align: center;
             line-height: 70px;
+            margin-top: 10px;
         }
 
-        .main_slide_box > .bx-wrapper{
-            height: auto;
+        .tab_menu_box.on .a{
+            background-color: black;
+            color: white;
+        }
+
+        .swiper_main_slideshow{
+            margin-top: 50px;
+        }
+
+        .swiper_main_slideshow{
+            cursor: pointer;
+            display: flex;
+        }
+
+        .swiper_main_slideshow > img{
             width: 100%;
-            margin-top: 70px;
+            height: 100%;
+            object-fit: cover;
         }
 
- 
-       .swiper_main_slideshow > img {
-        cursor: pointer;
-    
+       .main_slide_box > .bx-wrapper > .bx-viewport{
+        width: 1650px;
        }
 
        .bx-prev,.bx-next{
         display: none;
        }
-   
 
        .swiper_banner_slideshow {
         height: 120px;
@@ -163,10 +175,12 @@
 
 
        .swiper_slide_Sec{
-        width: 1480px;
+        width: 1500px;
         display: flex;
         justify-content: space-between;
         margin-top: 180px;
+        margin-left: 10px;
+
        }
 
        .swiper_slide_box > img{
@@ -199,6 +213,7 @@
         cursor: pointer;
         overflow: hidden;
         margin-top: 180px;
+        height: 600px;
        }
 
 
@@ -385,6 +400,7 @@
         top: 80%;
         position: fixed;
         cursor: pointer;
+
        }
 
        #shop_menus{
@@ -521,6 +537,10 @@
             display: none;
         }
 
+        .swiper_slide_Sec{
+            margin-left: -5px;
+        }
+
         .swiper_slide_box{
             width: 380px;
             height: auto;
@@ -546,6 +566,11 @@
         .search_box{
             right: 50px;
         }
+
+        #shop_menus02{
+            overflow-y: scroll;
+        }
+
        }
 
        /* 테블릿 가로, 테블릿 세로 (해상도 768px ~ 1023px)*/
@@ -564,6 +589,12 @@
             width: 140px;
             margin: 0 auto;
             
+        }
+
+        .swiper_hot_item_ul > li > img, .swiper_outer_item_ul > li > img
+        , .swiper_top_item_ul > li > img, .swiper_pants_item_ul > li > img
+        , .swiper_sk_item_ul > li > img{
+            flex: 1 1 40%;
         }
 
         .arrowbox{
@@ -622,6 +653,10 @@
             height: auto;
         }
 
+        .arrowbox{
+            margin-top: -250px;
+        }
+
         #basic_sec{
             flex-direction: column;
         }
@@ -673,6 +708,10 @@
         .search_cnt > li{
             font-size: 0.9em;
         }
+
+        #close_bar{
+            margin-left: 90%;
+        }
         
     
     }
@@ -703,7 +742,7 @@
 
         $( document ).ready( function() {
         $( window ).scroll( function() {
-          if ( $( this ).scrollTop() > 10 ) {
+          if ( $( this ).scrollTop() > 180 ) {
             $( '.tab_menu_swiper' ).show();
           } else{
             $( '.tab_menu_swiper' ).hide();
@@ -713,7 +752,7 @@
 
       $( document ).ready( function() {
         $( window ).scroll( function() {
-          if ( $( this ).scrollTop() > 20 ) {
+          if ( $( this ).scrollTop() > 30 ) {
             $( '.scroll_top' ).fadeIn();
           } else {
             $( '.scroll_top' ).fadeOut();
@@ -725,6 +764,7 @@
         });
       });
 
+      
         $(function(){
           $(".swiper_hot_item_ul > li:last").prependTo(".swiper_hot_item_ul");
           $(".nextbtn").click(function(){
@@ -805,12 +845,14 @@
           });
         });
 
-        $(function(){
-            $(".drop_down_mu").click(function(){
-                $(".drop_mu").slideToggle()
-            });
-            $(".lb_dropdn").click(function(){
-                $(".lb_drop_mu").slideToggle()
+        $(document).ready(function(){
+            $('.drop_down_mu').click(function(){   
+                if($(this).next('.drop_mu').hasClass('active')){
+                       $(' .drop_mu').removeClass('active').slideUp();
+                } else{
+                    $('.card .drop_mu').removeClass('active').slideUp();   
+                    $(this).next('.drop_mu').addClass('active').slideDown();
+                }              
             });
         });
 
@@ -839,6 +881,7 @@
                $("#shop_menus").stop().hide();
         });
       });
+
     </script>
 </head>
 <body>
@@ -880,8 +923,9 @@
             <li><a href="#">BLACKUP PROJECT</a></li>
             <li><a href="#">오늘도착</a></li>
         </ul>
+        <div class="card">
         <div class="drop_down_mu">SHOP<i class="fa-solid fa-chevron-down fa-xs"></i></div>
-        <ul class="drop_mu">
+        <ul class="drop_mu active">
             <li><a href="#">인기상품재입고</a></li>
             <li><a href="#">비베이직&비데님</a></li>
             <li><a href="#">아우터</a></li>
@@ -895,14 +939,17 @@
             <li><a href="#">액세사리</a></li>
             <li><a href="#">유니섹스</a></li>
         </ul>
-        <div class="lb_dropdn">LOOKBOOK<i class="fa-solid fa-chevron-down fa-xs"></i></div>
-        <ul class="lb_drop_mu">
+    </div>
+    <div class="card">
+        <div class="drop_down_mu">LOOKBOOK<i class="fa-solid fa-chevron-down fa-xs"></i></div>
+        <ul class="drop_mu active">
             <li><a href="#">F/W 2023 COLLECTION</a></li>
             <li><a href="#">H/S 2023 COLLECTION</a></li>
             <li><a href="#">S/S 2023 COLLECTION</a></li>
             <li><a href="#">F/W 2023 COLLECTION</a></li>
             <li><a href="#">S/S 2023 COLLECTION</a></li>
         </ul>
+    </div>
         <ul class="shop_bottom_mu">
             <li><a href="#">로그인</a></li>
             <li><a href="#">마이페이지</a></li>
@@ -922,8 +969,9 @@
             <li><a href="#">BLACKUP PROJECT</a></li>
             <li><a href="#">오늘도착</a></li>
         </ul>
+        <div class="card">
         <div class="drop_down_mu">SHOP<i class="fa-solid fa-chevron-down fa-xs"></i></div>
-        <ul class="drop_mu">
+        <ul class="drop_mu active">
             <li><a href="#">인기상품재입고</a></li>
             <li><a href="#">비베이직&비데님</a></li>
             <li><a href="#">아우터</a></li>
@@ -937,14 +985,17 @@
             <li><a href="#">액세사리</a></li>
             <li><a href="#">유니섹스</a></li>
         </ul>
-        <div class="lb_dropdn">LOOKBOOK<i class="fa-solid fa-chevron-down fa-xs"></i></div>
-        <ul class="lb_drop_mu">
+    </div>
+    <div class="card">
+        <div class="drop_down_mu">LOOKBOOK<i class="fa-solid fa-chevron-down fa-xs"></i></div>
+        <ul class="drop_mu active">
             <li><a href="#">F/W 2023 COLLECTION</a></li>
             <li><a href="#">H/S 2023 COLLECTION</a></li>
             <li><a href="#">S/S 2023 COLLECTION</a></li>
             <li><a href="#">F/W 2023 COLLECTION</a></li>
             <li><a href="#">S/S 2023 COLLECTION</a></li>
         </ul>
+    </div>
         <ul class="shop_bottom_mu">
             <li><a href="#">로그인</a></li>
             <li><a href="#">마이페이지</a></li>
@@ -957,12 +1008,12 @@
     </div>
     <div class="tab_menu_swiper">
         <div class="tab_menu_inr">
-        <div class="tab_menu_box"><span class="hot"><a href="#swiper_hot_item_slideshow01">인기아이템</a></span></div>
-        <div class="tab_menu_box"><span class="outer"><a href="#swiper_outer_item_slideshow01">OUTER</a></span></div>
-        <div class="tab_menu_box"><span class="basic"><a href="#basic_sec01">BASIC</a></span></div>
-        <div class="tab_menu_box"><span class="top"><a href="#swiper_top_item_slideshow01">TOP</a></span></div>
-        <div class="tab_menu_box"><span class="pants"><a href="#swiper_pants_item_slideshow01">PANTS</a></span></div>
-        <div class="tab_menu_box"><span class="sk"><a href="#swiper_sk_item_slideshow01">SK&OPS</a></span></div>
+        <div class="tab_menu_box"><span class="hot"><a class="a" href="#swiper_hot_item_slideshow01">인기아이템</a></span></div>
+        <div class="tab_menu_box"><span class="outer"><a class="a" href="#swiper_outer_item_slideshow01">OUTER</a></span></div>
+        <div class="tab_menu_box"><span class="basic"><a class="a" href="#basic_sec01">BASIC</a></span></div>
+        <div class="tab_menu_box"><span class="top"><a class="a" href="#swiper_top_item_slideshow01">TOP</a></span></div>
+        <div class="tab_menu_box"><span class="pants"><a class="a" href="#swiper_pants_item_slideshow01">PANTS</a></span></div>
+        <div class="tab_menu_box"><span class="sk"><a class="a" href="#swiper_sk_item_slideshow01">SK&OPS</a></span></div>
     </div>
     </div>
 </header>
@@ -1005,7 +1056,7 @@
     </div>
     </section>
     <div id="swiper_hot_item_slideshow01"></div>
-       <section id="swiper_hot_item_slideshow">
+       <section id="swiper_hot_item_slideshow" class="sec">
          <h3>최근 인기있는 상품</h3>
             <ul class="swiper_hot_item_ul">
                 <li><img src="images2/blackup_hot_item01.gif" alt="한쪽 숄더가 파여있는 여성모델(베이지,블랙) gif"></li>
@@ -1033,7 +1084,7 @@
         <div class="nextbtn"><i class="fa-solid fa-chevron-right"></i></div>
     </section>
     <div id="swiper_outer_item_slideshow01"></div>
-    <section id="swiper_outer_item_slideshow">
+    <section id="swiper_outer_item_slideshow" class="sec">
         <h3>OUTER</h3>
         <ul class="swiper_outer_item_ul">
             <li><img src="images2/blackup_outer01.webp" alt="후드집업 입고있는 여성모델(그레이,블랙)gif"></li>
@@ -1059,7 +1110,7 @@
         <div class="outer_nextbtn"><i class="fa-solid fa-chevron-right"></i></div>
     </section>
     <div id="basic_sec01"></div>
-    <section id="basic_sec">
+    <section id="basic_sec" class="sec">
         <img src="images2/blackup_basic.jpg" alt="베이직-브라탑을 입고있는 여성모델 이미지">
         <div class="basic_txt">
             <h1>B-BASIC</h1>
@@ -1072,7 +1123,7 @@
         </div>
     </section>
     <div id="swiper_top_item_slideshow01"></div>
-    <section id="swiper_top_item_slideshow">
+    <section id="swiper_top_item_slideshow" class="sec">
         <h3>TOP</h3>
         <ul class="swiper_top_item_ul">
             <li><img src="images2/blackup_top.webp" alt="기본 니트 입고있는 여성모델(레드,아이보리)gif"></li>
@@ -1110,7 +1161,7 @@
                 <img src="images2/blackup_banner01.jpg" alt="오늘도착 홍보 이미지 배너">
             </section>
     <div id="swiper_pants_item_slideshow01"></div>
-    <section id="swiper_pants_item_slideshow">
+    <section id="swiper_pants_item_slideshow" class="sec">
         <h3>PANTS</h3>
         <ul class="swiper_pants_item_ul">
             <li><img src="images2/blackup_pants01.gif" alt="워싱와이드 팬츠 입고있는 여성모델(연한청)gif"></li>
@@ -1141,7 +1192,7 @@
             <div class="pants_nextbtn"><i class="fa-solid fa-chevron-right"></i></div>
         </section>
     <div id="swiper_sk_item_slideshow01"></div>
-    <section id="swiper_sk_item_slideshow">
+    <section id="swiper_sk_item_slideshow" class="sec">
         <h3>SK&OPS</h3>
         <ul class="swiper_sk_item_ul">
             <li><img src="images2/blackup_sk01.webp" alt="얇은면 오프숄더 롱원피스(카키)gif"></li>
@@ -1238,6 +1289,7 @@
       function closeNav(){
             document.getElementById("shop_menus02").style.width = " 0 "
         }
+
 </script>
 </body>
 </html>
